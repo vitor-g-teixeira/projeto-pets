@@ -1,0 +1,31 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    background-color: rgb(97, 97, 97);
+}
+
+.form-titulo{
+    font-size: 1.8em;
+}
+/*
+.form-botoes{
+
+}
+
+.form-botao{
+
+}
+*/
+input{
+    max-width: 150px;
+}
