@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeAdota Cadastro</title>
-    <link rel="stylesheet" href="padrao.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="formulario.css">
 </head>
 <body>
     <header>
-        <h1>Me Adota</h1>
+        <a href="index.html" class="tela-inicial"><h1>Me Adota</h1></a>
     </header>
     
     <main>
@@ -17,16 +23,17 @@
             <h1 class="form-titulo">Cadastro</h1>
             
             <div class="form-campos">
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Telefone">
-                <input type="text" placeholder="Endereço">
-                <input type="password" placeholder="Senha" name="" id="">
+                <input class="campo" type="text" placeholder="Nome">
+                <input class="campo" type="text" placeholder="Email">
+                <input class="campo" type="text" placeholder="Telefone">
+                <input class="campo" type="text" placeholder="Endereço">
+                <input class="campo" type="password" placeholder="Senha" name="" id="">
             </div>
 
             <div class="form-botoes">
                 <a href="index.html"><input type="button" value="Voltar"></a>
                 <input type="button" value="Cadastrar">
+                <p>Já possui uma conta? <a class="link" href="login.html">Logar</a></p>
             </div>
         </form>
     </main>
