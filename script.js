@@ -15,6 +15,8 @@ class Usuario{
         this.aceita_doenca;
         this.aceita_exclusividade;
     }
+
+    
 }
 
 class Andamento_Adocao{
@@ -24,7 +26,7 @@ class Andamento_Adocao{
         this.id_pet;
     }
 
-    estagio_atual(){
+    verificarAndamento(){
         //(notificou, contatou, adotou)
     } 
 }
