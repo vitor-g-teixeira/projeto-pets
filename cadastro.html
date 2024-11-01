@@ -11,6 +11,7 @@
         crossorigin="anonymous" 
         referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="padrao.css">
     <link rel="stylesheet" href="formulario.css">
 </head>
 <body>
@@ -19,11 +20,11 @@
     </header>
     
     <main>
-        <form>
+        <form class="columns wraps">
             <h1 class="form-titulo">Cadastro</h1>
             
-            <div class="form-inputs">
-                <div class="form-campos">
+            <div class="form-inputs columns wraps">
+                <div class="form-campos wraps">
                     <input class="campo" type="text" placeholder="Nome">
                     <input class="campo" type="text" placeholder="Sobrenome">
                     <input class="campo maior" type="text" placeholder="Email">
@@ -31,7 +32,7 @@
                     <input class="campo" type="password" placeholder="Senha" name="" id="">
                 </div>
 
-                <div class="form-endereco">
+                <div class="form-endereco wraps">
                     <input class="campo" type="text" placeholder="Cidade">
                     <input class="campo" type="text" placeholder="Estado">
                     <input class="campo maior" type="text" placeholder="Logradouro">
@@ -39,11 +40,11 @@
                     <input class="campo" type="text" placeholder="Complemento">
                 </div>
 
-                <div class="form-boxes">
-                    <div class="form-genero">
+                <div class="form-boxes wraps">
+                    <div class="form-genero columns wraps">
                         <h2>Gênero</h2>
 
-                        <div class="genero-opcoes">
+                        <div class="genero-opcoes columns">
                             <div class="opcao">
                                 <input type="radio" name="genero" id="check-masculino">
                                 <label for="check-masculino">Masculino</label>
@@ -57,10 +58,10 @@
 
                     </div>
 
-                    <div class="form-preferencias">
+                    <div class="form-preferencias columns wraps">
                         <h2>Preferências</h2>
 
-                        <div class="preferencias-opcoes">
+                        <div class="preferencias-opcoes columns">
 
                             <div class="opcao">
                                 <input type="checkbox" name="preferencia" id="preferencia-masculino">
@@ -75,8 +76,8 @@
                     </div>
                 </div>
 
-                <div class="form-botoes">
-                    <a href="index.html"><input class="botao" type="button" value="Voltar"></a>
+                <div class="form-botoes wraps">
+                    <a href="index.html" class="botao">Voltar</a>
                     <input class="botao" type="button" value="Cadastrar">
                 </div>
             </div>
