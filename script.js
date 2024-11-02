@@ -14,6 +14,10 @@ class Usuario{
         this.aceita_necessidade;
         this.aceita_doenca;
         this.aceita_exclusividade;
+
+        this.genero;
+
+
     }
 
     
@@ -81,15 +85,49 @@ function cadastrar(){
 
 
 
-    const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+    
+    function validarDados(){
+        for(let campo of valores){
+            if(campo.trim() === '')
+            {
+                alert("Prencha todos os campos abaixo!");
+                campo.focus();
+                return false
+            }
+        }
+        
+        return true;
+    }
+
     
 
+    if(validarDados() == true)
+    {
+        var usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+        alert("OK");
+    }
+    
+        
     //Entrada de dados está funcionando. Agr precisa validar esses dados e inserir no banco de dados
+
+    
+     
+
+    
+    
+    
+
+
+
+
+
+    
+    
 
 
 
     document.getElementById("teste").innerHTML = `
-    <p>Nome: ${usuario.nome} 
+    <p>Nome: ${usuario.nome} <p>
     <p>Sobrenome: ${usuario.sobrenome}
     <p>telefone: ${usuario.telefone}
     <p>Email: ${usuario.email} 
