@@ -1,3 +1,22 @@
+
+const pool = require('./db');
+pool.connect((err, client, release) => {
+  if (err) {
+    return console.error('Erro ao conectar ao banco de dados', err.stack);
+  }
+  client.query('SELECT NOW()', (err, result) => {
+    release();
+    if (err) {
+      return console.error('Erro ao executar a consulta', err.stack);
+    }
+    else{
+        console.log('Resultado:', result.rows[0].now);
+    }
+  });
+});
+
+
+
 class Usuario{
     constructor(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento){
         this.id_usuario;
@@ -15,7 +34,26 @@ class Usuario{
         this.aceita_doenca;
         this.aceita_exclusividade;
 
+
         this.genero;
+
+
+
+      /*  insertUsuario()
+        {
+            //faltou sobrenome, telefone, logradouro e complemento
+            pool.query(`INSERT INTO usuarios (nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) VALUES ('${this.nome}', '${this.email}', '${this.senha}', 'indefinido', 'indefinido', '${this.numero}', 'indefinido', '${this.cidade}', '${this.estado}', 'indefinido');`, (err, res) => 
+                { 
+                    if (err) 
+                    { 
+                        console.error('Erro ao inserir dados', err.stack); 
+                    } 
+                    else { console.log('Inserção bem-sucedida:', res.rowCount); } });
+        }
+*/
+
+
+
 
 
     }
@@ -76,9 +114,10 @@ class Pet_Necessidade{
 
 
 
+
 function cadastrar(){
     
-    const campos = document.getElementsByClassName('campo');
+    const campos = document.getElementsByClassName("campo");
     const valores = Array.from(campos).map(campo => campo.value);
 
     const [nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento] = valores;
@@ -104,27 +143,14 @@ function cadastrar(){
     if(validarDados() == true)
     {
         var usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
-        alert("OK");
+        alert("ok");
+       // usuario.insertUsuario();
     }
     
         
+    
+    
     //Entrada de dados está funcionando. Agr precisa validar esses dados e inserir no banco de dados
-
-    
-     
-
-    
-    
-    
-
-
-
-
-
-    
-    
-
-
 
     document.getElementById("teste").innerHTML = `
     <p>Nome: ${usuario.nome} <p>
@@ -142,4 +168,3 @@ function cadastrar(){
     
     
 }
-
