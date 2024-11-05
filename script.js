@@ -114,56 +114,98 @@ class Pet_Necessidade{
 
 
 
-
 function cadastrar(){
     
-    const campos = document.getElementsByClassName("campo");
-    const valores = Array.from(campos).map(campo => campo.value);
+    const nome = document.getElementById("nome").value.trim();
+    const sobrenome = document.getElementById("sobrenome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
-    const [nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento] = valores;
-
-
+    const cidade = document.getElementById("cidade").value.trim();
+    const estado = document.getElementById("estado").value.trim();
+    const logradouro = document.getElementById("logradouro").value.trim();
+    const numero = document.getElementById("numero").value.trim();
+    const complemento = document.getElementById("complemento").value.trim();
 
     
+
+
+    const valores = [nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento]
+
+    
+
+
+
     function validarDados(){
-        for(let campo of valores){
-            if(campo.trim() === '')
+
+
+
+        let contCampo = 0;
+        for(let cont = 0; cont < valores.length; cont++)
+        {
+            if(valores[cont].length == 0)
             {
-                alert("Prencha todos os campos abaixo!");
-                campo.focus();
-                return false
+                contCampo++;
             }
         }
+
+
+
+
+
+        if(contCampo > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+       
         
-        return true;
     }
-
     
-
     if(validarDados() == true)
     {
-        var usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
-        alert("ok");
-       // usuario.insertUsuario();
+        alert("OK");
     }
+    else{
+        alert("Preencha todos os campos!");
+    }
+
+    const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+
+
     
         
     
     
     //Entrada de dados está funcionando. Agr precisa validar esses dados e inserir no banco de dados
 
-    document.getElementById("teste").innerHTML = `
-    <p>Nome: ${usuario.nome} <p>
-    <p>Sobrenome: ${usuario.sobrenome}
-    <p>telefone: ${usuario.telefone}
-    <p>Email: ${usuario.email} 
-    <p>Senha: ${usuario.senha}
-    <p>estado: ${usuario.estado} 
-    <p>cidade: ${usuario.cidade} 
-    <p>logradouro: ${usuario.logradouro}
-    <p>número: ${usuario.numero}
-    <p>complemento: ${usuario.complemento}
+    let teste = document.querySelector("div#teste1");
+
+    
+
+
+
+    teste.innerHTML = `<p>Nome: ${usuario.nome} <\p>
+    <p>Sobrenome: ${usuario.sobrenome} <\p>
+    <p>telefone: ${usuario.telefone} <\p>
+    <p>Email: ${usuario.email}  <\p>
+    <p>Senha: ${usuario.senha} <\p>
+    <p>estado: ${usuario.estado} <\p>
+    <p>cidade: ${usuario.cidade} <\p>
+    <p>logradouro: ${usuario.logradouro}<\p>
+    <p>número: ${usuario.numero}<\p>
+    <p>complemento: ${usuario.complemento}<\p>
     `;
+
+
+
+
+    
 
     
     
