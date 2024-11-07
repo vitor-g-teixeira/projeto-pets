@@ -65,7 +65,7 @@ function cadastrar(){
     if(validarDados() == true && validarEmail(email))
     {
         const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
-        
+        alert("OK");
     }
     else{
         alert("Preencha todos os campos!");

@@ -11,12 +11,14 @@ class Pet{
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
+        this.dataResgate = dataResgate;
+        this.sexo = sexo;
+        this.idade = idade;
+        this.raca = raca;
+        this.porte = porte;
+        this.doencaCronica = doencaCronica;
 
-        this.aceita_necessidade;
-        this.aceita_doenca;
-        this.aceita_exclusividade;
-
-        this.genero;
+        
     }
 }
 
