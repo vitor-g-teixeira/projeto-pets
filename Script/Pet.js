@@ -1,11 +1,7 @@
 class Pet{
-    constructor(nome, cidade, estado, logradouro, numero, complemento, dataResgate, sexo, idade, raca, porte, doencaCronica, ){
+    constructor(nome, dataResgate, sexo, idade, raca, porte, doencaCronica, cidade, estado, logradouro, numero, complemento){
 
         this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.telefone = telefone;
-        this.email = email;
-        this.senha = senha;
         this.estado = estado;
         this.cidade = cidade;
         this.logradouro = logradouro;
@@ -25,10 +21,12 @@ class Pet{
 function cadastrar(){
     
     const nome = document.getElementById("nome").value.trim();
-    const sobrenome = document.getElementById("sobrenome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const telefone = document.getElementById("telefone").value.trim();
-    const senha = document.getElementById("senha").value.trim();
+    const dataResgate = document.getElementById("dataResgate").value.trim();
+    const sexo = document.getElementById("sexo").value.trim();
+    const idade = document.getElementById("idade").value.trim();
+    const raca = document.getElementById("raca").value.trim();
+    const porte = document.getElementById("dataResgate").value.trim();
+    const doencaCronica = document.getElementById("doencaCronica").value.trim();
 
     const cidade = document.getElementById("cidade").value.trim();
     const estado = document.getElementById("estado").value.trim();
@@ -36,7 +34,7 @@ function cadastrar(){
     const numero = document.getElementById("numero").value.trim();
     const complemento = document.getElementById("complemento").value.trim();
 
-    const valores = [nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento];
+    const valores = [nome, dataResgate, sexo, idade, raca, porte, doencaCronica, cidade, estado, logradouro, numero, complemento];
 
     function validarDados(){
 
@@ -61,7 +59,7 @@ function cadastrar(){
     
     if(validarDados() == true)
     {
-        const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+        const pet = new Pet(nome, dataResgate, sexo, idade, raca, porte, doencaCronica, cidade, estado, logradouro, numero, complemento);
     }
     else{
         alert("Preencha todos os campos!");
