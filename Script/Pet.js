@@ -22,6 +22,7 @@ function cadastrar(){
     
     const nome = document.getElementById("nome").value.trim();
     const dataResgate = document.getElementById("dataResgate").value.trim();
+    //sexo será um radio check
     const sexo = document.getElementById("sexo").value.trim();
     const idade = document.getElementById("idade").value.trim();
     const raca = document.getElementById("raca").value.trim();
