@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="padrao.css">
     <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="cadastroAnimal.css">
 </head>
 <body>
     <header>
@@ -27,22 +28,50 @@
             <div class="form-inputs columns wraps">
                 <div class="form-campos wraps">
                     <input class="campo" id="nome" type="text" placeholder="Nome">
-                    <input class="campo" id="raca" type="text" placeholder="raça">
-                    <input class="campo" id="idade" type="text" placeholder="idade">
-                    <h1 id="textoResgate">Data de Resgate:</h1>
-                    <input class="campo" id="dataResgate" type="date" placeholder="Data de Resgate" name="" id="">
+                    <input class="campo" id="idade" type="text" placeholder="Idade">
+
+                    <div class="form-campos wraps lista-container">
+
+                        <div class="form-campos wraps lista">
+                            <label for="especie-animal">Espécie:</label>
+                            <select id="especie-animal" name="especie-animal" id="fruta">
+                                <option value="" selected disabled class="placeholder-text">Selecione</option>
+                                <option value="">Cachorro</option>
+                                <option value="">Gato</option>
+                                <option value="">Hamster</option>
+                                <option value="vira-lata">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-campos wraps lista">
+                            <label for="raca-animal">Raça:</label>
+                            <select id="raca-animal" name="raca-animal">
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="rotweiller">Rotweiller</option>
+                                <option value="bulldog">Bulldog</option>
+                                <option value="pastor-alemao">Pastor Alemão</option>
+                                <option value="fila-brasileiro">Fila Brasileiro</option>
+                                <option value="vira-lata">Vira-Lata</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
            
-
-                <div class="form-endereco wraps">
-                    <h1 id="endereçoAbrigo">Endereço do abrigo:</h1>
-                    <input class="campo" id="cidade" type="text" placeholder="Cidade">
-                    <input class="campo" id="estado" type="text" placeholder="Estado">
-                    <input class="campo maior" id="logradouro" type="text" placeholder="Logradouro">
-                    <input class="campo" id="numero" type="text" placeholder="Número">
-                    <input class="campo" id="complemento" type="text" placeholder="Complemento">
+                <div class="form-campos wraps" id="container-resgate">
+                    <label for="data-resgate" id="resgate-texto">Data do Resgate:</label>
+                    <input class="campo" id="data-resgate" type="date">
                 </div>
 
+                <div class="form-endereco wraps">
+                    <h2 id="endereco-abrigo">Endereço do abrigo:</h2>
+                    <div class="form-campos wraps">
+                        <input class="campo" id="cidade" type="text" placeholder="Cidade">
+                        <input class="campo" id="estado" type="text" placeholder="Estado">
+                        <input class="campo maior" id="logradouro" type="text" placeholder="Logradouro">
+                        <input class="campo" id="numero" type="text" placeholder="Número">
+                        <input class="campo" id="complemento" type="text" placeholder="Complemento">
+                    </div>
+                </div>
                 <div class="form-boxes wraps">
                     <div class="form-genero columns wraps">
                         <h2>Gênero</h2>
@@ -62,7 +91,7 @@
                     </div>
 
                     <div class="form-preferencias columns wraps">
-                        <h2>Preferências</h2>
+                        <h2>Necessidades especiais</h2>
 
                         <div class="preferencias-opcoes columns">
 
@@ -79,26 +108,13 @@
                     </div>
                 </div>
 
-
                 <div class="form-botoes wraps">
                     <a href="index.html" class="botao">Voltar</a>
                     <input id="cadastro"class="botao" type="button" value="Cadastrar" onclick="cadastrar()">
-
-                
+                </div>
             </div>
-            
-
-            <p>Já possui uma conta? <a class="link" href="login.html">Logar</a></p>
         </form>
-
-
-        
     </main>
-    
-    
-    
-
-
 
     <footer>
         <p>footer</p>
