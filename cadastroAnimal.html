@@ -32,34 +32,40 @@
 
                     <div class="form-campos wraps lista-container">
 
-                        <div class="form-campos wraps lista">
+                        <div class="form-campos wraps form-lista">
                             <label for="especie-animal">Espécie:</label>
-                            <select id="especie-animal" name="especie-animal" id="fruta">
-                                <option value="" selected disabled class="placeholder-text">Selecione</option>
-                                <option value="">Cachorro</option>
-                                <option value="">Gato</option>
-                                <option value="">Hamster</option>
-                                <option value="vira-lata">Outro</option>
-                            </select>
+                            <div class="form-campos wraps form-lista lista">
+                                <select class="select-front" id="especie-animal" name="especie-animal" id="especie-animal">
+                                    <option value="" selected hidden disabled>Selecione</option>
+                                    <option value="">Cachorro</option>
+                                    <option value="">Gato</option>
+                                    <option value="">Hamster</option>
+                                    <option value="vira-lata">Outro</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="form-campos wraps lista">
+                        <div class="form-campos wraps form-lista">
                             <label for="raca-animal">Raça:</label>
-                            <select id="raca-animal" name="raca-animal">
-                                <option value="" selected disabled>Selecione</option>
-                                <option value="rotweiller">Rotweiller</option>
-                                <option value="bulldog">Bulldog</option>
-                                <option value="pastor-alemao">Pastor Alemão</option>
-                                <option value="fila-brasileiro">Fila Brasileiro</option>
-                                <option value="vira-lata">Vira-Lata</option>
-                            </select>
+                            <div class="form-campos wraps form-lista lista">
+                                <select class="select-front" id="raca-animal" name="raca-animal">
+                                    <option value="" selected hidden disabled>Selecione</option>
+                                    <option value="rotweiller">Rotweiller</option>
+                                    <option value="bulldog">Bulldog</option>
+                                    <option value="pastor-alemao">Pastor Alemão</option>
+                                    <option value="fila-brasileiro">Fila Brasileiro</option>
+                                    <option value="vira-lata">Vira-Lata</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
            
-                <div class="form-campos wraps" id="container-resgate">
+                <div class="form-campos wraps" id="container-data-resgate">
                     <label for="data-resgate" id="resgate-texto">Data do Resgate:</label>
-                    <input class="campo" id="data-resgate" type="date">
+                    <div class="form-campos wraps" id="data-resgate">
+                        <input class="campo" type="text" placeholder="dd/mm/aaaa" id="data-resgate-input">
+                    </div>
                 </div>
 
                 <div class="form-endereco wraps">
@@ -72,6 +78,7 @@
                         <input class="campo" id="complemento" type="text" placeholder="Complemento">
                     </div>
                 </div>
+                
                 <div class="form-boxes wraps">
                     <div class="form-genero columns wraps">
                         <h2>Gênero</h2>
@@ -110,7 +117,7 @@
 
                 <div class="form-botoes wraps">
                     <a href="index.html" class="botao">Voltar</a>
-                    <input id="cadastro"class="botao" type="button" value="Cadastrar" onclick="cadastrar()">
+                    <input id="cadastro"class="botao" type="button" value="Cadastrar" onclick="if(validarData()) cadastrar();">
                 </div>
             </div>
         </form>
@@ -121,5 +128,6 @@
     </footer>
 
     <script src="Script/Pet.js"></script>
+    <script src="Script/PetFront.js"></script>
 </body>
 </html>

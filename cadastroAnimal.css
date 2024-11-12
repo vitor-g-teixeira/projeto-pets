@@ -2,30 +2,66 @@
     width: 100%;
 }
 
-.lista{
-    width: 100%;
+.form-lista{
+    width: 45%;
+    flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
-.lista > label{
+.form-lista > label{
     font-weight: bolder;
+    font-size: 1.8em;
+    color: #2b335a;
 }
 
-.lista > select{
-    width: 70%;
+.form-lista > select{
+    width: 100%;
     height: 50px;
 
     font-size: 1.5em;
 }
 
-select option{
-    color: black;
+.lista{
+    justify-content: center;
+    width: 100%;
 }
 
-.placeholder-text{
+.lista > select{
+    justify-content: center;
+    padding: 0 15px;
     color: grey;
 }
 
-#container-resgate{
+#container-data-resgate{
+    flex-direction: column;
     width: 100%;
 }
+
+#resgate-texto{
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2b335a;
+}
+
+#data-resgate{
+    width: 70%;
+}
+
+#endereco-abrigo{
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2b335a;
+}
+
+input:valid {
+    color: black; /* Quando o campo estiver preenchido (válido), a cor será preta */
+}
+
+select:focus{
+    color: black;
+}
+
+select.changed {
+    color: black;
+  }

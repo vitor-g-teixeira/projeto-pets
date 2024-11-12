@@ -19,7 +19,7 @@ class Pet{
 }
 
 function cadastrar(){
-    
+    alert('entrou');
     const nome = document.getElementById("nome").value.trim();
     const dataResgate = document.getElementById("dataResgate").value.trim();
     //sexo será um radio check
