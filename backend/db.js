@@ -31,3 +31,5 @@ export async function CadastroProduto(nome, marca, valor) {
         console.error("Erro ao cadastrar produto:", err);
     }
 }
+
+CadastroProduto("Notebook", "Dell", 5000);
