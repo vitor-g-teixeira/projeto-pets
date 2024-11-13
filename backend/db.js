@@ -4,10 +4,10 @@ const { Client } = pg;
 export async function executeQuery(query, params) {
     const client = new Client({
         user: 'postgres',
-        password: '1234',
+        password: 'MABD',
         host: 'localhost',
         port: 5432,
-        database: 'Amazonia',
+        database: 'MeAdota',
     });
 
     await client.connect();
@@ -21,15 +21,16 @@ export async function executeQuery(query, params) {
     }
 }
 
-export async function CadastroProduto(nome, marca, valor) {
-    const query = "INSERT INTO produtos(nome, marca, valor) VALUES($1, $2, $3)";
-    const params = [nome, marca, valor];
+export async function CadastroProduto(nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) {
+    const query = "INSERT INTO produtos(nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) VALUES($1, $2, $3, $4, 5, $6, $7, $8, $9, $10)";
+    const params = [nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep];
     try {
         await executeQuery(query, params);
-        console.log("Produto cadastrado com sucesso!");
+        console.log("Usuário cadastrado com sucesso!");
     } catch (err) {
-        console.error("Erro ao cadastrar produto:", err);
+        console.error("Erro ao cadastrar usuário:", err);
     }
 }
 
-CadastroProduto("Notebook", "Dell", 5000);
+CadastroProduto("Otávio", "Otavio@gmail.com", 1234, "1990-09-09", "Rua AB", "20", "Bairro B2", "Campinas", "SP", "87550-000");
+
