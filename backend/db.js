@@ -21,7 +21,7 @@ export async function executeQuery(query, params) {
     }
 }
 
-export async function CadastroProduto(nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) {
+export async function CadastroUsuario(nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) {
     const query = "INSERT INTO produtos(nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep) VALUES($1, $2, $3, $4, 5, $6, $7, $8, $9, $10)";
     const params = [nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep];
     try {
@@ -32,5 +32,5 @@ export async function CadastroProduto(nome, email, senha, data_nascimento, rua, 
     }
 }
 
-CadastroProduto("Otávio", "Otavio@gmail.com", 1234, "1990-09-09", "Rua AB", "20", "Bairro B2", "Campinas", "SP", "87550-000");
+CadastroUsuario("Otávio", "Otavio@gmail.com", 1234, "1990-09-09", "Rua AB", "20", "Bairro B2", "Campinas", "SP", "87550-000");
 
