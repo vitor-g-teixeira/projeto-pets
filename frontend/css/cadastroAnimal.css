@@ -54,14 +54,40 @@
     color: #2b335a;
 }
 
-input:valid {
-    color: black; /* Quando o campo estiver preenchido (válido), a cor será preta */
-}
-
 select:focus{
     color: black;
 }
 
 select.changed {
     color: black;
-  }
+}
+
+#descricao-necessidade{
+    margin-top: 20px;
+    flex-direction: column;
+    width: 100%;
+}
+
+#descricao-necessidade label{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2b335a;
+}
+
+.texto-aside{
+    font-style: italic;;
+    font-size: .8em;
+    font-weight: normal;
+}
+
+#descricao{
+    margin-top: 8px;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    resize: none;
+    height: 190px; /* Defina a altura do campo */
+    padding-top: 5px; /* Alinha o texto ao topo */
+    white-space: normal; /* Permite que o texto quebre a linha */
+    word-wrap: break-word; /* Quebra a linha se for necessário */
+}
