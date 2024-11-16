@@ -1,8 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { executeQuery, CadastroUsuario } from './db.js';
+import { executeQuery, CadastroUsuario } from './db.mjs';
+
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser.json());
 

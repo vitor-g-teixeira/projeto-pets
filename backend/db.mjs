@@ -32,4 +32,3 @@ export async function CadastroUsuario(nome, email, senha, data_nascimento, rua, 
     }
 }
 
-
