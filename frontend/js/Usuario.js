@@ -21,11 +21,9 @@ class Usuario{
         this.genero;
     }
 
-
-
 }
 
-function cadastrar(){
+async function cadastrar(){
     
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
@@ -62,14 +60,32 @@ function cadastrar(){
             }
     }
     
-    if(validarDados() == true && validarEmail(email))
-    {
-        const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
-        alert("OK");
-    }
-    else{
-        alert("Preencha todos os campos!");
-    }
+    if (validarDados(valores) && validarEmail(email)) { 
+        try { 
+            const response = await fetch('http://localhost:3000/cadastrar', { 
+                method: 'POST',
+                 headers: { 
+                    'Content-Type': 'application/json'
+                 }, 
+                 body: JSON.stringify(valores) 
+                }); 
+                
+                if (response.ok) { 
+                    alert("Usuário cadastrado com sucesso!"); 
+                } else { 
+                    const errorText = await response.text(); 
+                    alert("Erro ao cadastrar usuário: " + errorText); 
+                } 
+            } catch (err) {
+                 console.error("Erro ao fazer a requisição:", err);
+                  alert("Erro ao cadastrar usuário. Tente novamente mais tarde."); 
+                } 
+            } else { 
+                alert("Preencha todos os campos corretamente!"); 
+            }
+
+    
+    
 }
 
 function validarEmail(email){
@@ -80,3 +96,4 @@ function validarEmail(email){
     }
     return false;
 }
+
