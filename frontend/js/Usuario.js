@@ -62,7 +62,7 @@ async function cadastrar(){
     
     if (validarDados(valores) && validarEmail(email)) { 
         try { 
-            const response = await fetch('http://localhost:3000/cadastrar', { 
+            const response = await fetch('http://localhost:3000/CadastroUsuario', { 
                 method: 'POST',
                  headers: { 
                     'Content-Type': 'application/json'
@@ -71,6 +71,8 @@ async function cadastrar(){
                 }); 
                 
                 if (response.ok) { 
+                    const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+                    CadastroUsuario(usuario.nome, usuario.email, usuario.senha, "2000-01-01", "Rua A", usuario.numero, "Bairro B2", usuario.cidade, usuario.estado, "87550-000");
                     alert("Usuário cadastrado com sucesso!"); 
                 } else { 
                     const errorText = await response.text(); 

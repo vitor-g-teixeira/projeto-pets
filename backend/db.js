@@ -32,5 +32,4 @@ export async function CadastroUsuario(nome, email, senha, data_nascimento, rua, 
     }
 }
 
-CadastroUsuario("Otávio", "Otavio1@gmail.com", 1234, "1990-09-09", "Rua AB", "20", "Bairro B2", "Campinas", "SP", "87550-000");
 
