@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Usuários</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+    }
+    label, select, input {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    button {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Controle de Usuários</h1>
+
+  <form id="insert-form">
+    <h2>Inserir Usuário</h2>
+    <label for="nome-insert">Nome:</label>
+    <input type="text" id="nome-insert" name="nome" required>
+    <label for="email-insert">Email:</label>
+    <input type="email" id="email-insert" name="email" required>
+    <label for="senha-insert">Senha:</label>
+    <input type="password" id="senha-insert" name="senha" required>
+    <label for="data_nascimento-insert">Data de Nascimento:</label>
+    <input type="date" id="data_nascimento-insert" name="data_nascimento" required>
+    <label for="rua-insert">Rua:</label>
+    <input type="text" id="rua-insert" name="rua" required>
+    <label for="numero-insert">Número:</label>
+    <input type="text" id="numero-insert" name="numero" required>
+    <label for="bairro-insert">Bairro:</label>
+    <input type="text" id="bairro-insert" name="bairro" required>
+    <label for="cidade-insert">Cidade:</label>
+    <input type="text" id="cidade-insert" name="cidade" required>
+    <label for="estado-insert">Estado:</label>
+    <input type="text" id="estado-insert" name="estado" required>
+    <label for="cep-insert">CEP:</label>
+    <input type="text" id="cep-insert" name="cep" required>
+    <button type="submit">Inserir</button>
+  </form>
+
+  <form id="update-form">
+    <h2>Atualizar Usuário</h2>
+    <label for="id-update">ID:</label>
+    <input type="number" id="id-update" name="id" required>
+    <label for="nome-update">Nome:</label>
+    <input type="text" id="nome-update" name="nome" required>
+    <label for="email-update">Email:</label>
+    <input type="email" id="email-update" name="email" required>
+    <label for="senha-update">Senha:</label>
+    <input type="password" id="senha-update" name="senha" required>
+    <label for="data_nascimento-update">Data de Nascimento:</label>
+    <input type="date" id="data_nascimento-update" name="data_nascimento" required>
+    <label for="rua-update">Rua:</label>
+    <input type="text" id="rua-update" name="rua" required>
+    <label for="numero-update">Número:</label>
+    <input type="text" id="numero-update" name="numero" required>
+    <label for="bairro-update">Bairro:</label>
+    <input type="text" id="bairro-update" name="bairro" required>
+    <label for="cidade-update">Cidade:</label>
+    <input type="text" id="cidade-update" name="cidade" required>
+    <label for="estado-update">Estado:</label>
+    <input type="text" id="estado-update" name="estado" required>
+    <label for="cep-update">CEP:</label>
+    <input type="text" id="cep-update" name="cep" required>
+    <button type="submit">Atualizar</button>
+  </form>
+
+  <form id="delete-form">
+    <h2>Deletar Usuário</h2>
+    <label for="id-delete">ID:</label>
+    <input type="number" id="id-delete" name="id" required>
+    <button type="submit">Deletar</button>
+  </form>
+
+  <h2>Lista de Usuários</h2>
+  <button id="fetch-users">Buscar Usuários</button>
+  <ul id="user-list"></ul>
+
+  <script>
+    document.getElementById('insert-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const nome = document.getElementById('nome-insert').value;
+      const email = document.getElementById('email-insert').value;
+      const senha = document.getElementById('senha-insert').value;
+      const data_nascimento = document.getElementById('data_nascimento-insert').value;
+      const rua = document.getElementById('rua-insert').value;
+      const numero = document.getElementById('numero-insert').value;
+      const bairro = document.getElementById('bairro-insert').value;
+      const cidade = document.getElementById('cidade-insert').value;
+      const estado = document.getElementById('estado-insert').value;
+      const cep = document.getElementById('cep-insert').value;
+
+      const response = await fetch('http://localhost:3000/inserirUsuario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep })
+      });
+
+      if (response.ok) {
+        alert('Dados inseridos com sucesso!');
+      } else {
+        alert('Erro ao inserir dados.');
+      }
+    });
+
+    document.getElementById('update-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const id_usuario = document.getElementById('id-update').value;
+      const nome = document.getElementById('nome-update').value;
+      const email = document.getElementById('email-update').value;
+      const senha = document.getElementById('senha-update').value;
+      const data_nascimento = document.getElementById('data_nascimento-update').value;
+      const rua = document.getElementById('rua-update').value;
+      const numero = document.getElementById('numero-update').value;
+      const bairro = document.getElementById('bairro-update').value;
+      const cidade = document.getElementById('cidade-update').value;
+      const estado = document.getElementById('estado-update').value;
+      const cep = document.getElementById('cep-update').value;
+
+      const response = await fetch('http://localhost:3000/atualizarUsuario', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id_usuario, nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep })
+      });
+
+      if (response.ok) {
+        alert('Dados atualizados com sucesso!');
+      } else {
+        alert('Erro ao atualizar dados.');
+      }
+    });
+
+    document.getElementById('delete-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const id_usuario = document.getElementById('id-delete').value;
+
+      const response = await fetch('http://localhost:3000/deletarUsuario', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id_usuario })
+      });
+
+      if (response.ok) {
+        alert('Dados deletados com sucesso!');
+      } else {
+        alert('Erro ao deletar dados.');
+      }
+    });
+
+    document.getElementById('fetch-users').addEventListener('click', async () => {
+      const response = await fetch('http://localhost:3000/SelecionarUsuarios');
+      const users = await response.json();
+
+      const userList = document.getElementById('user-list');
+      userList.innerHTML = '';
+      users.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = `ID: ${user.id_usuario}, Nome: ${user.nome}, Email: ${user.email}, Data de Nascimento: ${user.data_nascimento}, Rua: ${user.rua}, Número: ${user.numero}, Bairro: ${user.bairro}, Cidade: ${user.cidade}, Estado: ${user.estado}, CEP: ${user.cep}`;
+        userList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
