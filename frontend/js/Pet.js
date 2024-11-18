@@ -23,12 +23,15 @@ class Pet{
 function cadastrarAnimal(){
     
     const nome = document.getElementById("nome").value.trim();
-    const dataResgate = document.getElementById("dataResgate").value.trim();
+    const dataResgate = document.getElementById("data-resgate").value;
 
-   //testar depois const genero = document.querySelector('input[name="genero"]:checked');    
+      
+      
     const idade = document.getElementById("idade").value.trim();
-    const raca = document.getElementById("raca").value.trim();
-    const porte = document.getElementById("dataResgate").value.trim();
+   //testar depois const raca = document.getElementById("raca").value.trim();
+   //testar depois const especie =
+    //testar depois const porte = document.getElementById("").value.trim();
+    
     //testar depois const necessidade = document.querySelector('input[name="preferencia"]:checked');
     //const descNecessidade = document.getElementById("descricao-necessidade").value.trim();
 
@@ -40,7 +43,8 @@ function cadastrarAnimal(){
 
 
     function validarDados(){
-        let camposPreenchidos;
+        
+        let camposPreenchidos = 0;
 
         if(nome === '')
         {
@@ -50,16 +54,102 @@ function cadastrarAnimal(){
             camposPreenchidos++;
         }
 
+        if(idade === '')
+        {
+            camposPreenchidos += 0;
+        }
+        else{
+            camposPreenchidos++;
+        }
+
 
         
+        let genero_masc = document.getElementById('check-masculino');
+            let genero_fem = document.getElementById('check-feminino');
+
+            let genero = '';
+
+            if(genero_masc.checked)
+            {
+                genero = "Macho";
+                camposPreenchidos++;
+            }
+            if(genero_fem.checked)
+            {
+                genero = "Fêmea";
+                camposPreenchidos++;
+            }
+            else
+            {
+                camposPreenchidos += 0;
+            }    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        //abrigo
+        if(cidade ==='')
+        {
+            camposPreenchidos += 0;
+        }
+        else{
+            camposPreenchidos++;
+        }
+
+        if(estado ==='')
+        {
+            camposPreenchidos += 0;
+        }
+        else
+        {
+            camposPreenchidos++;
+        }
+
+        if(logradouro ==='')
+        {
+            camposPreenchidos += 0;
+        }
+        else
+        {
+            camposPreenchidos++;
+        }
+
+        if(numero ==='')
+        {
+            camposPreenchidos += 0;
+        }
+        else
+        {
+            camposPreenchidos++;
+        }
+
+        if(complemento ==='')
+        {
+            camposPreenchidos += 0;
+        }
+        else
+        {
+            camposPreenchidos++;
+        }
+
+
 
         return camposPreenchidos;
     }
     
 
-    validarDados
-    alert("aaaa")
-
+    
+    alert(validarDados())
+    alert(dataResgate)
 
  /*   if(validarDados())
     {
