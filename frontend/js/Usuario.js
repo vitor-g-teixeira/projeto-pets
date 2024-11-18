@@ -84,7 +84,7 @@ function validarEmail(email){
     return false;
 }*/
 
-async function cadastrar(){
+async function cadastrarUsuario(){
     
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
