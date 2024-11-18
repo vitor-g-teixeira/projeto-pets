@@ -21,11 +21,10 @@ class Usuario{
         this.genero;
     }
 
-
-
 }
 
-function cadastrar(){
+
+/*async function cadastrar(){
     
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
@@ -62,14 +61,100 @@ function cadastrar(){
             }
     }
     
-    if(validarDados() == true && validarEmail(email))
-    {
-        const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
-        alert("OK");
+    
+        if(validarDados() == true && validarEmail(email))
+            {
+                const usuario = new Usuario(nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento);
+                alert("OK");
+            }
+            else{
+                alert("Preencha todos os campos!");
+            }
+        
+    
+    
+}
+
+function validarEmail(email){
+    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if(regexEmail.test(email)){
+        return true;
     }
-    else{
-        alert("Preencha todos os campos!");
+    return false;
+}*/
+
+async function cadastrarUsuario(){
+    
+    const nome = document.getElementById("nome").value.trim();
+    const sobrenome = document.getElementById("sobrenome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+
+    const cidade = document.getElementById("cidade").value.trim();
+    const estado = document.getElementById("estado").value.trim();
+    const logradouro = document.getElementById("logradouro").value.trim();
+    const numero = document.getElementById("numero").value.trim();
+    const complemento = document.getElementById("complemento").value.trim();
+
+    //valores para completar
+    const data_nascimento = "2000-01-01";
+    const rua = "Rua Abcd";
+    const bairro = "Bairro 1234";
+    const cep = "85240-001";
+
+
+
+    const valores = [nome, sobrenome, email, telefone, senha, cidade, estado, logradouro, numero, complemento];
+
+    function validarDados(){
+
+        let contCampo = 0;
+        for(let cont = 0; cont < valores.length; cont++)
+        {
+            if(valores[cont] === '')
+            {
+                contCampo++;
+            }
+        }
+
+        if(contCampo > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
     }
+    
+    
+        if(validarDados() == true && validarEmail(email))
+            {
+                const response = await fetch('http://localhost:3000/inserirUsuario', { 
+                    method: 'POST', 
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    }, 
+                    body: JSON.stringify({ nome, email, senha, data_nascimento, rua, numero, bairro, cidade, estado, cep }) 
+                });
+
+                if (response.ok) 
+                    { 
+                        alert('Dados inseridos com sucesso!'); 
+                    } 
+                    else 
+                    { 
+                        alert('Erro ao inserir dados.');
+                    }
+            }
+            else{
+                alert("Preencha todos os campos!");
+            }
+        
+    
+    
 }
 
 function validarEmail(email){
