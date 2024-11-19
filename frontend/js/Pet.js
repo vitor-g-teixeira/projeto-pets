@@ -44,23 +44,7 @@ function cadastrarAnimal(){
 
     function validarDados(){
         
-        let camposPreenchidos = 0;
-
-        if(nome === '')
-        {
-            camposPreenchidos += 0;
-        }
-        else{
-            camposPreenchidos++;
-        }
-
-        if(idade === '')
-        {
-            camposPreenchidos += 0;
-        }
-        else{
-            camposPreenchidos++;
-        }
+        
 
 
         
@@ -79,11 +63,7 @@ function cadastrarAnimal(){
                 genero = "Fêmea";
                 camposPreenchidos++;
             }
-            else
-            {
-                camposPreenchidos += 0;
-            }    
-
+            
         
 
 
@@ -97,59 +77,12 @@ function cadastrarAnimal(){
 
 
         //abrigo
-        if(cidade ==='')
-        {
-            camposPreenchidos += 0;
-        }
-        else{
-            camposPreenchidos++;
-        }
-
-        if(estado ==='')
-        {
-            camposPreenchidos += 0;
-        }
-        else
-        {
-            camposPreenchidos++;
-        }
-
-        if(logradouro ==='')
-        {
-            camposPreenchidos += 0;
-        }
-        else
-        {
-            camposPreenchidos++;
-        }
-
-        if(numero ==='')
-        {
-            camposPreenchidos += 0;
-        }
-        else
-        {
-            camposPreenchidos++;
-        }
-
-        if(complemento ==='')
-        {
-            camposPreenchidos += 0;
-        }
-        else
-        {
-            camposPreenchidos++;
-        }
-
-
-
-        return camposPreenchidos;
+        
     }
     
 
     
     alert(validarDados())
-    alert(dataResgate)
 
  /*   if(validarDados())
     {

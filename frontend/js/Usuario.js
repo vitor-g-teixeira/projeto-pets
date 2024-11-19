@@ -110,23 +110,7 @@ async function cadastrarUsuario(){
 
     function validarDados(){
 
-        let contCampo = 0;
-        for(let cont = 0; cont < valores.length; cont++)
-        {
-            if(valores[cont] === '')
-            {
-                contCampo++;
-            }
-        }
-
-        if(contCampo > 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+        return true;
     }
     
     

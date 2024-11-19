@@ -27,15 +27,15 @@
 
             <div class="form-inputs columns wraps">
                 <div class="form-campos wraps">
-                    <input class="campo" id="nome" type="text" placeholder="Nome">
-                    <input class="campo" id="idade" type="text" placeholder="Idade">
+                    <input class="campo" id="nome" type="text" placeholder="Nome" required>
+                    <input class="campo" id="idade" type="text" placeholder="Idade" required>
 
                     <div class="form-campos wraps lista-container">
 
                         <div class="form-campos wraps form-lista">
                             <label for="especie-animal">Espécie:</label>
                             <div class="form-campos wraps form-lista lista">
-                                <select class="select-front" id="especie-animal" name="especie-animal" id="especie-animal">
+                                <select class="select-front" id="especie-animal" name="especie-animal" id="especie-animal" required>
                                     <option value="" selected hidden disabled>Selecione</option>
                                     <option value="">Cachorro</option>
                                     <option value="">Gato</option>
@@ -48,7 +48,7 @@
                         <div class="form-campos wraps form-lista">
                             <label for="raca-animal">Raça:</label>
                             <div class="form-campos wraps form-lista lista">
-                                <select class="select-front" id="raca-animal" name="raca-animal">
+                                <select class="select-front" id="raca-animal" name="raca-animal" required>
                                     <option value="" selected hidden disabled>Selecione</option>
                                     <option value="rotweiller">Rotweiller</option>
                                     <option value="bulldog">Bulldog</option>
@@ -71,11 +71,11 @@
                 <div class="form-endereco wraps">
                     <h2 id="endereco-abrigo">Endereço do abrigo:</h2>
                     <div class="form-campos wraps">
-                        <input class="campo" id="cidade" type="text" placeholder="Cidade">
-                        <input class="campo" id="estado" type="text" placeholder="Estado">
-                        <input class="campo maior" id="logradouro" type="text" placeholder="Logradouro">
-                        <input class="campo" id="numero" type="text" placeholder="Número">
-                        <input class="campo" id="complemento" type="text" placeholder="Complemento">
+                        <input class="campo" id="cidade" type="text" placeholder="Cidade" required>
+                        <input class="campo" id="estado" type="text" placeholder="Estado"required>
+                        <input class="campo maior" id="logradouro" type="text" placeholder="Logradouro"required>
+                        <input class="campo" id="numero" type="text" placeholder="Número"required>
+                        <input class="campo" id="complemento" type="text" placeholder="Complemento"required>
                     </div>
                 </div>
 
@@ -130,7 +130,7 @@
 
                 <div class="form-botoes wraps">
                     <a href="index.html" class="botao">Voltar</a>
-                    <input id="cadastro"class="botao" type="button" value="Cadastrar" onclick="if(validarData()) cadastrarAnimal();">
+                    <input id="cadastro"class="botao" type="submit" value="Cadastrar" onclick="if(validarData()) cadastrarAnimal();">
                 </div>
             </div>
         </form>
