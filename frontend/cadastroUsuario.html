@@ -20,22 +20,22 @@
     </header>
     
     <main>
-        <form class="columns wraps">
+        <form class="columns wraps" id="formulario" onsubmit="return validarDados(event)">
             <h1 class="form-titulo">Cadastro</h1>
             
 
-            <div class="form-inputs columns wraps" id="formulario">
+            <div class="form-inputs columns wraps" >
                 <div class="form-campos wraps">
                     <input class="campo" id="nome" type="text" placeholder="Nome" required>
                     <input class="campo" id="sobrenome" type="text" placeholder="Sobrenome"required>
                     <input class="campo maior" id="email" type="text" placeholder="Email"required>
                     <input class="campo" id="telefone" type="text" placeholder="Telefone"required>
-                    <form id="senha-form"onsubmit="return validarSenha()">
-                        <input class="campo" id="senha" type="password" placeholder="Senha" name="" id=""required>
-                        <div id="error-message" style="color: red;">
+                    
+                    <input class="campo" id="senha" type="password" placeholder="Senha" name="" id=""required>
+                    <div id="error-message" style="color: red;">
                             
-                        </div>
-                    </form>
+                    </div>
+                
                     
                 </div>
            
