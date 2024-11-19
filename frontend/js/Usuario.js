@@ -84,7 +84,7 @@ function validarEmail(email){
     return false;
 }*/
 
-async function cadastrarUsuario(){
+
     
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
@@ -114,7 +114,7 @@ async function cadastrarUsuario(){
     }
     
     
-        if(validarDados() == true && validarEmail(email))
+        if(validarEmail(email))
             {
                 const response = await fetch('http://localhost:3000/inserirUsuario', { 
                     method: 'POST', 
@@ -133,13 +133,11 @@ async function cadastrarUsuario(){
                         alert('Erro ao inserir dados.');
                     }
             }
-            else{
-                alert("Preencha todos os campos!");
-            }
+            
         
     
     
-}
+
 
 function validarEmail(email){
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -149,3 +147,34 @@ function validarEmail(email){
     }
     return false;
 }
+
+
+
+
+// Adiciona o evento de submit ao formulário após o DOM ser carregado 
+document.addEventListener('DOMContentLoaded', function () { 
+    document.getElementById('formulario').addEventListener('submit', ValidarSenha); 
+});
+
+function ValidarSenha(event){
+    senha = document.getElementById('senha').value; 
+    const errorMessage = document.getElementById('error-message')
+    // Expressão regular para validar a senha 
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/; 
+    if (regex.test(senha)) 
+        { 
+             // Limpa a mensagem de erro se a senha for válida 
+            errorMessage.innerHTML = ''; 
+            return true;
+        } 
+    else {
+        
+        // Exibe mensagem de erro se a senha não for válida 
+        errorMessage.innerHTML = 'A senha deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula e um número.'; 
+        event.preventDefault();
+        return false; 
+    }       
+            
+}
+
+
