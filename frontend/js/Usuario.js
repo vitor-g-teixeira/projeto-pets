@@ -23,6 +23,8 @@ class Usuario{
 
 }
 
+
+async function cadastrarUsuario(){
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -78,7 +80,9 @@ class Usuario{
                 return false;
             }
         }
-        
+    }
+
+    
 function validarDados(event)
 {
     let senha = document.getElementById('senha').value.trim();
