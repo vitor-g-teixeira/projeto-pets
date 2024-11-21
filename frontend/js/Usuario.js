@@ -83,32 +83,37 @@ async function cadastrarUsuario(){
     }
 
     
-function validarDados(event)
-{
-    let senha = document.getElementById('senha').value.trim();
-    const errorMessage = document.getElementById('error-message');
-          
-    // Expressão regular para validar a senha
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
-          
-              // Validar a senha
-              if (!regex.test(senha)) {
-                // Exibe mensagem de erro se a senha não for válida
-                errorMessage.innerHTML = 'A senha deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula e um número.';
-                // Impede a submissão do formulário
-                return false;
-              }
-          
-              // Limpa a mensagem de erro se a senha for válida
-              errorMessage.innerHTML = '';
-              return true;
-}
-        
-document.addEventListener('DOMContentLoaded', function () {
-     const formulario = document.getElementById('formulario');
-          
-    formulario.addEventListener('submit', validarDados);
-});
+    function validarSenha() 
+    { 
+        var senha = document.getElementById("senha").value; 
+        var mensagemErro = ''; 
+        if (senha.length < 8) 
+        {
+            mensagemErro += "A senha deve ter pelo menos 8 caracteres.\n"; 
+        } 
+        if (!/[a-z]/.test(senha)) 
+        { 
+            mensagemErro += "A senha deve conter pelo menos uma letra minúscula.\n"; 
+        } 
+        if (!/[A-Z]/.test(senha)) 
+        {
+            mensagemErro += "A senha deve conter pelo menos uma letra maiúscula.\n"; 
+        } 
+        if (!/[0-9]/.test(senha)) 
+        { 
+            mensagemErro += "A senha deve conter pelo menos um número.\n"; 
+        } 
+        if (senha !== confirmacao) 
+        { 
+            mensagemErro += "A confirmação da senha não corresponde.\n"; 
+        } 
+        if (mensagemErro) 
+        { 
+            alert(mensagemErro); 
+            return false; 
+        } 
+        return true; 
+    }
 
     
 

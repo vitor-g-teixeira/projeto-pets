@@ -20,14 +20,13 @@
     </header>
     
     <main>
-        <form class="columns wraps" id="formulario" >
+        <form class="columns wraps" onsubmit="return validarSenha() " >
             <h1 class="form-titulo">Cadastro</h1>
             
 
             <div class="form-inputs columns wraps" >
                 <div class="form-campos wraps">
                     <input class="campo" id="nome" type="text" placeholder="Nome" required>
-                    <input class="campo" id="sobrenome" type="text" placeholder="Sobrenome"required>
                     <input class="campo maior" id="email" type="text" placeholder="Email"required>
                     <input class="campo" id="telefone" type="text" placeholder="Telefone"required>
                     
@@ -41,9 +40,10 @@
            
 
                 <div class="form-endereco wraps">
-                    <input class="campo" id="cidade" type="text" placeholder="Cidade"required>
                     <input class="campo" id="estado" type="text" placeholder="Estado"required>
-                    <input class="campo maior" id="logradouro" type="text" placeholder="Logradouro"required>
+                    <input class="campo" id="cidade" type="text" placeholder="Cidade"required>
+                    <input class="campo maior" id="bairro" type="text" placeholder="Bairro"required>
+                    <input class="campo" id="rua" type="text" placeholder="Rua"required>
                     <input class="campo" id="numero" type="text" placeholder="Número"required>
                     <input class="campo" id="complemento" type="text" placeholder="Complemento"required>
                 </div>
@@ -68,6 +68,14 @@
 
                     <div class="form-preferencias columns wraps">
                         <h2>Preferências</h2>
+
+                        <div class="form-inputs columns wraps">
+                            <input class="campo" id="raca_desejada" type="text" placeholder="Raça Desejada">
+                        </div>
+
+                    
+
+
 
                         <div class="preferencias-opcoes columns">
 
