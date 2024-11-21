@@ -27,8 +27,9 @@
             <div class="form-inputs columns wraps" >
                 <div class="form-campos wraps">
                     <input class="campo" id="nome" type="text" placeholder="Nome" required>
-                    <input class="campo maior" id="email" type="text" placeholder="Email"required>
-                    <input class="campo" id="telefone" type="text" placeholder="Telefone"required>
+                    <input class="campo" type="text" placeholder="Data de Nascimento" oninput="mascaraData(event)" required>
+                    <input class="campo maior" id="email" type="text" placeholder="Email" required>
+                    <input class="campo" id="telefone" type="text" placeholder="Telefone" oninput="mascaraTelefone(event)" required>
                     
                     <input class="campo" id="senha" type="password" placeholder="Senha" name="" id=""required>
                     <div id="error-message" style="color: red;">
@@ -63,41 +64,47 @@
                                 <label for="check-feminino">Feminino</label>
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="form-preferencias columns wraps">
-                        <h2>Preferências</h2>
-
-                        <div class="form-inputs columns wraps">
-                            <input class="campo" id="raca_desejada" type="text" placeholder="Raça Desejada">
+                    <div class="form-possui-preferencias columns">
+                        <h2>Possui preferências?</h2>
+                        <div class="opcao">
+                            <input type="radio" name="possui-preferencia" id="check-possui">
+                            <label for="check-possui">Sim</label>
                         </div>
 
-                    
+                        <div class="opcao">
+                            <input type="radio" name="possui-preferencia" id="check-nao-possui">
+                            <label for="check-nao-possui">Não</label>
+                        </div>
+                    </div>
 
+                </div>
 
+                <div id="usuario-preferencias" class="form-preferencias columns wraps" style="display: none;">
+                    <h2>Opções de Preferências</h2>
 
-                        <div class="preferencias-opcoes columns">
+                    <div class="form-inputs columns wraps">
+                        <input class="campo" id="raca_desejada" type="text" placeholder="Raça Desejada">
+                    </div>
 
-                            <div class="opcao">
-                                <input type="checkbox" name="preferencia" id="preferencia-masculino">
-                                <label for="preferencia-masculino">Masculino</label>
-                            </div>
+                    <div class="preferencias-opcoes columns">
 
-                            <div class="opcao">
-                                <input type="checkbox" name="preferencia" id="preferencia-feminino">
-                                <label for="preferencia-feminino">Feminino</label>
-                            </div>
+                        <div class="opcao">
+                            <input type="checkbox" name="preferencia" id="preferencia-masculino">
+                            <label for="preferencia-masculino">Masculino</label>
+                        </div>
+
+                        <div class="opcao">
+                            <input type="checkbox" name="preferencia" id="preferencia-feminino">
+                            <label for="preferencia-feminino">Feminino</label>
                         </div>
                     </div>
                 </div>
 
-
                 <div class="form-botoes wraps">
                     <a href="index.html" class="botao">Voltar</a>
                     <button id="cadastro"class="botao" type="submit">Cadastrar</button>
-
-                
             </div>
 
             <p>Já possui uma conta? <a class="link" href="login.html">Logar</a></p>
@@ -105,5 +112,7 @@
     </main>
 
     <script src="js/Usuario.js"></script>
+    <script src="js/UsuarioFront.js"></script>
+
 </body>
 </html>
